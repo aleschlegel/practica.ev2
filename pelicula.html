@@ -18,7 +18,7 @@
                 </section>
             </main>
             <footer>
-                <p><a href="#">Alejandra Schlegel</a> <a href="#">DNO037</a></p>
+                <p><a href="#">Alejandra Schlegel</a> <a href="https://github.com/aleschlegel">DNO037</a></p>
             </footer>
         </div>
 
@@ -28,14 +28,14 @@
         <script>
             $(function () {
                 var n = new URLSearchParams(window.location.search).get("nro");
-                $.getJSON("https://raw.githubusercontent.com/profesorfaco/dno037-2023/main/clase-08/datos.json", function (data) {
+                $.getJSON("https://raw.githubusercontent.com/aleschlegel/practica.ev2/main/datos.json", function (data) {
                     console.log(data);
                     if (n !== null) {
                         $("section").append("<h1>" + data[n].name + "</h1><h4>" + data[n].director + " (" + data[n].year + ')</h4><img src="images/' + data[n].pic_lg + '"><p>' + data[n].description + '</p><h3>Trailer</h3><p>Puedes ver algunas escenas de la película en <a href="' + data[n].trailer + '" target="_blank">Youtube</a><p>');
                     } else {
-                        document.querySelector("section").innerHTML = '<h1>Algo salió mal. Pero R2D2 lo reparará</h1><h4>Por favor, vuelve a escoger cualquiera de las <a href="peliculas.html">películas</a></h4>';
+                        document.querySelector("section").innerHTML = '<h1>Algo salió mal. Pero Dobby te ayudará a solucionarlo</h1><h4>Por favor, vuelve a escoger cualquiera de las <a href="peliculas.html">películas</a></h4>';
                         document.body.style.backgroundPosition = "bottom right";
-                        document.body.style.backgroundImage = 'url("images/error-amable.jpg")';
+                        document.body.style.backgroundImage = 'url("images/dobby.jpg")';
                         document.body.style.backgroundRepeat = "no-repeat";
                         document.body.style.backgroundSize = "auto 90%";
                     }
